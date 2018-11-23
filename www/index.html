@@ -1,69 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <title>PhoneGap Developer App</title>
-    <link rel="stylesheet" href="css/app.css" type="text/css"/>
-    <script src="js/ms-viewport.js"></script>
+	<title>Pierre Fabre Cuponing</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Pierre, Fabre, Cuponing"
+	/>
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<meta charset utf="8">
+	<!--font-awsome-css-->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!--bootstrap-->
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!--custom css-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<!--component-css-->
+
+	<!-- web-fonts -->
+	
+	<!--<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">-->
+	<!-- //web-fonts -->
+
 </head>
-<body ontouchstart="">
 
-    <div class="container">
-        <div class="inner">
+<body>
+	<div class="body-back">
+		<div class="masthead pdng-stn1">
+			
+			<div class="phone-box wrap push" id="home">
+				
+				<!-- banner -->
+				<div class="login">
+					<div class="login-modal">
+						<div class="booking-info">
+							<img src="images/logo_2.png" class="img-responsive center-block" alt="Laboratorios Pierre Fabre">
+							<h2 class="text-center">PF Cuponing</h2>
 
-            <article id="bot">
+						</div>
+						<div class="login-form_agile">
+							<form action="main.html" method="post">
+								<p>Código Cliente Pierre Fabre </p>
+								<input type="text" name="Name" required>
+								<p>Password</p>
+								<input type="password" name="Password" required>
+								<!--<div class="check-text">
+									<ul>
+										<li>
+											<input type="checkbox" id="brand" value="">
+											<label for="brand"><span></span> Recordarme</label>
+										</li>
+									</ul>
+									<div class="clearfix"> </div>
+								</div>-->
+								<input type="submit" value="Entrar">
+							</form>
+						</div>
+					</div>
+				</div>
+				<!--// banner -->
+				
+				<!--//footer-->
+				<div class="footer navbar-fixed-bottom">
+					<div class="footer_pos_w3_agile">
+						<p>© Pierre Fabre Cuponing</p>
+					</div>
+				</div>
+				<!--//footer-->
 
-                <div class="shadow"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	
+	 <script type="text/javascript" charset="utf-8">
 
-                <div class="monitor">
-                    <div class="cover"></div>
-                    <form id="login-form" class="faded hidden" novalidate>
-                        <label>&gt; Server Address</label>
-                        <input type="url" id="address" class="offset"></input>
-                        <input type="submit" value="Connect" class="offset"></input>
-                        <label></label>
-                        <label class="info">3-finger tap goes home</label>
-                        <label class="info">4-finger tap refreshes</label>
-                    </form>
-                    <div class="visor pulse">
-                        <label>Loading...</label>
-                        <div class="eye left faded"></div>
-                        <div class="eye right faded"></div>
-                    </div>
-                </div>
+   
 
-                <div class="panel top">
-                    <div class="panel visor-cover"></div>
-                </div>
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready",onDeviceReady,false);
+		 
+    // device APIs are available
+    //
+    function onDeviceReady() {
+		  document.addEventListener("backbutton", function (e) {
+			e.preventDefault();
+			navigator.notification.confirm(
+				'¿Quieres salir de la aplicación?', // message
+				 onConfirm,            // callback to invoke with index of button pressed
+				'SALIR',           // title
+				['SALIR','CANCELAR']     // buttonLabels
+			);
+           // navigator.app.exitApp();
+        }, false );
+		
+    }
+	function navegar(url) {
+		var url = url;
+      window.location.href = url;
+    }
+    function onConfirm(buttonIndex) {
+		if(buttonIndex == 0 || buttonIndex == 1){
+			navigator.app.exitApp();
+		}
+    	
+	}
 
-                <div class="panel bottom"></div>
-
-                <div class="footer faded">
-                    <p>
-                        Share usage data
-                        <input type="checkbox" id="analytic-checkbox" class="tgl tgl-light" />
-                        <label for="analytic-checkbox" class="tgl-btn"></label>
-                    </p>
-                    <a href="http://www.adobe.com/special/misc/terms.html" target="_system">Terms</a>
-                    &amp;
-                    <a href="http://www.adobe.com/special/misc/privacy.html" target="_system">Privacy</a>
-                    <div id="version">
-                        %PHONEGAP_APP_VERSION%
-                    </div>
-                </div>
-            </article>
-
-
-        </div>
-    </div>
-    <script src="cordova.js"></script>
-    <script src="js/zepto.min.js"></script>
-    <script src="js/nacl-util.min.js"></script>
-    <script src="js/nacl-fast.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/deploy.js"></script>
-    <script src="js/analytic.js"></script>
+    </script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!--script-->
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/bigSlide.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.menu-link').bigSlide();
+		});
+	</script>
+	<!-- pop-up-box -->
+	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+	
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
+
 </html>
